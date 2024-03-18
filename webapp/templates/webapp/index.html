@@ -1,0 +1,19 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+    <body>
+        {% include "webapp/navbar.html" %}
+        <br>
+        <div class="text-center">
+            <h3>VEGA CRM - Management at it finest!</h3>
+            <br>
+            <h4>Manage Your Data Effectively!</h4>
+            <hr>
+            <br>
+
+            <a class = "btn btn-primary" type="button" href="{% url '' %}">Create Your account</a> 
+            {% comment %} href="{% url 'name from urls.py' %} {% endcomment %}
+
+        </div>
+    </body>
+{% endblock %}
