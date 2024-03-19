@@ -3,6 +3,7 @@
 {% block content %}
     <body>
         {% include "webapp/navbar.html" %}
+        
         <br>
         <div class="text-center">
             <h3>VEGA CRM - Management at it finest!</h3>
@@ -11,7 +12,7 @@
             <hr>
             <br>
 
-            <a class = "btn btn-primary" type="button" href="{% url '' %}">Create Your account</a> 
+            <a class = "btn btn-primary" type="button" href="{% url 'register' %}">Create Your account</a> 
             {% comment %} href="{% url 'name from urls.py' %} {% endcomment %}
 
         </div>
