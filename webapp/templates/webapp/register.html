@@ -19,7 +19,7 @@
 
             {% csrf_token %}
 
-            {{form | crispy}} #'form' from views.py - context - 'form'
+            {{form | crispy}} <!--'form' from views.py -register- context - 'form' -->
 
             <br>
 
@@ -30,7 +30,7 @@
         <br>
 
         <div class="text-center">
-            <p>Already have an account?</P> <a href={% url '' %}>Login</a>
+            <p>Already have an account?</P> <a href={% url 'login' %}>Login</a> <!--'login' is the name specificied in urls.py - -->
 
         </div>
         <br>
