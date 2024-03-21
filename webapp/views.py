@@ -87,12 +87,42 @@ def add_record(request):
     return render(request, 'webapp/add-record.html', context)
 
 
+#update record
+@login_required(login_url='login')
+def update(request, pk):
+
+    records = Record.objects.get(id=pk)
+
+    form = UpdateRecordForm(instance=records)
+
+    if request.method == 'POST':
+        form = UpdateRecordForm(request.POST, instance=records)
+
+        if form.is_valid():
+
+            form.save()
+            return redirect('dashboard')
+    
+    context = {'form':form}
+    return render(request, 'webapp/update.html', context)
 
 
+# read/view single record
+@login_required(login_url='login')
+def single_record(request, pk):
+
+    all_records = Record.objects.get(id=pk)
+
+    context={'record':all_records}
+    return render(request, 'webapp/view.html', context)
 
 
+# delete
+# @login_required(login_url='login')
+# def delete(request, pk):
+#     record = Record.objects.get(id)
 
-
+#     return render(request, 'webapp/view.html', context)
 
 
 
