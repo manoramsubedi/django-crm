@@ -17,4 +17,6 @@ urlpatterns = [
 
     path('view/<int:pk>', views.single_record, name="view"),
 
+    path('delete-record/<int:pk>', views.delete, name="delete"),
+
 ]

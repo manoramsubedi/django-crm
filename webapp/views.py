@@ -118,11 +118,13 @@ def single_record(request, pk):
 
 
 # delete
-# @login_required(login_url='login')
-# def delete(request, pk):
-#     record = Record.objects.get(id)
+@login_required(login_url='login')
+def delete(request, pk):
+    record = Record.objects.get(id=pk)
+    record.delete()
+    return redirect('dashboard')
 
-#     return render(request, 'webapp/view.html', context)
+    
 
 
 
